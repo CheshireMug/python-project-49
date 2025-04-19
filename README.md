@@ -12,5 +12,8 @@
 
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CheshireMug_python-project-49&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CheshireMug_python-project-49)
 
-### Asciinema
+### Asciinema_brain-even
 https://asciinema.org/a/QyTCk6wpDsTFQNDvXjufIWI9e
+
+### Asciinema_brain-calc
+https://asciinema.org/a/XxMT6tZJ7dHyRXFeXaah1Z88G
