@@ -17,3 +17,6 @@ https://asciinema.org/a/QyTCk6wpDsTFQNDvXjufIWI9e
 
 ### Asciinema_brain-calc
 https://asciinema.org/a/XxMT6tZJ7dHyRXFeXaah1Z88G
+
+### Asciinema_brain-gcd
+https://asciinema.org/a/8gqRE4tMTJC8kZGTA0un1vYo8
