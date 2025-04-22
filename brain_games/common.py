@@ -1,0 +1,12 @@
+import prompt
+
+
+def welcome_user():
+    name = prompt.string('May I have your name? ')
+    print('Hello, ' + name + '!')
+    return name
+
+
+def check_ponts(points):
+    if points == 3:
+        print("Congratulations, " + name + "!")

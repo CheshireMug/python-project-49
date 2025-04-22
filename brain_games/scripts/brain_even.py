@@ -1,11 +1,14 @@
 from random import randint
+
 import prompt
 
+from brain_games import common
 
-def welcome_user():
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
-    return name
+
+# def welcome_user():
+#     name = prompt.string('May I have your name? ')
+#     print('Hello, ' + name + '!')
+#     return name
 
 
 def even_game(name):
@@ -22,13 +25,12 @@ def even_game(name):
             print("'yes' is wrong answer ;(. Correct answer was 'no'.")
             print("Let's try again, " + name + "!")
             break
-    if points == 3:
-        print("Congratulations, " + name + "!")
+    common.check_ponts(points)
 
 
 def main():
     print("Welcome to the Brain Games!")
-    name = welcome_user()
+    name = common.welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     even_game(name)
 

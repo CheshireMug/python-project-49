@@ -1,4 +1,5 @@
-from random import randint
+from random import choice, randint
+
 import prompt
 
 
@@ -8,51 +9,37 @@ def welcome_user():
     return name
 
 
+def check_question(name, points):
+    operations = ['+', '-', '*']
+    select_operation = choice(operations)
+    num1 = randint(0, 100)
+    num2 = randint(0, 100)
+    expression = f"{num1} {select_operation} {num2}"
+    result = eval(expression)
+    print('Question: ' + expression)
+    answer = int(input('Your answer: '))
+    if answer == result:
+        print('Correct!')
+        points += 1
+    else:
+        print(
+        f"'{answer}' is is wrong answer ;(. \
+Correct answer was '{result}'."
+        )
+        print("Let's try again, " + name + "!")
+    return points
+
+
+def cycle(name, points):
+    for i in range(3):
+        points = check_question(name, points)
+        if points < (i + 1):
+            break
+    return points
+
 def calc_game(name):
     points = 0
-    for i in range(3):
-        num1 = randint(0, 100)
-        num2 = randint(0, 100)
-        operation = randint(0, 2)
-        if operation == 0:
-            print('Question: ' + str(num1) + ' + ' + str(num2))
-            answer = int(input('Your answer: '))
-            if answer == (num1 + num2):
-                print('Correct!')
-                points += 1
-            else:
-                print(
-                    f"'{answer}' is is wrong answer ;(. \
-Correct answer was '{num1 + num2}'."
-                    )
-                print("Let's try again, " + name + "!")
-                break
-        elif operation == 1:
-            print('Question: ' + str(num1) + ' - ' + str(num2))
-            answer = int(input('Your answer: '))
-            if answer == (num1 - num2):
-                print('Correct!')
-                points += 1
-            else:
-                print(
-                    f"'{answer}' is is wrong answer ;(. \
-Correct answer was '{num1 - num2}'."
-                    )
-                print("Let's try again, " + name + "!")
-                break
-        elif operation == 2:
-            print('Question: ' + str(num1) + ' * ' + str(num2))
-            answer = int(input('Your answer: '))
-            if answer == (num1 * num2):
-                print('Correct!')
-                points += 1
-            else:
-                print(
-                    f"'{answer}' is is wrong answer ;(. \
-Correct answer was '{num1 * num2}'."
-                    )
-                print("Let's try again, " + name + "!")
-                break
+    points = cycle(name, points)
     if points == 3:
         print("Congratulations, " + name + "!")
 
