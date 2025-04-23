@@ -21,8 +21,12 @@ def even_game(name):
         (num % 2 != 0) and answer == 'no':
             print('Correct!')
             points += 1
-        else:
+        elif (num % 2 != 0) and answer == 'yes':
             print("'yes' is wrong answer ;(. Correct answer was 'no'.")
+            print("Let's try again, " + name + "!")
+            break
+        elif (num % 2 == 0) and answer == 'no':
+            print("'no' is wrong answer ;(. Correct answer was 'yes'.")
             print("Let's try again, " + name + "!")
             break
     common.check_ponts(points, name)
