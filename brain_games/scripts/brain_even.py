@@ -1,6 +1,6 @@
 from random import randint
 
-import prompt
+# import prompt
 
 from brain_games import common
 
@@ -25,7 +25,7 @@ def even_game(name):
             print("'yes' is wrong answer ;(. Correct answer was 'no'.")
             print("Let's try again, " + name + "!")
             break
-    common.check_ponts(points)
+    common.check_ponts(points, name)
 
 
 def main():

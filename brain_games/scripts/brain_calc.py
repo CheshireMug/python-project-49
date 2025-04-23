@@ -37,6 +37,7 @@ def cycle(name, points):
             break
     return points
 
+
 def calc_game(name):
     points = 0
     points = cycle(name, points)

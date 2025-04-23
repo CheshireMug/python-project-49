@@ -13,10 +13,13 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CheshireMug_python-project-49&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CheshireMug_python-project-49)
 
 ### Asciinema_brain-even
-https://asciinema.org/a/QyTCk6wpDsTFQNDvXjufIWI9e
+https://asciinema.org/a/XtK6J4OkTE5gMEfvfM9S8LiUB
 
 ### Asciinema_brain-calc
-https://asciinema.org/a/XxMT6tZJ7dHyRXFeXaah1Z88G
+https://asciinema.org/a/dMGlkWy2qeKxCHzj7ZEvUAjni
 
 ### Asciinema_brain-gcd
-https://asciinema.org/a/8gqRE4tMTJC8kZGTA0un1vYo8
+https://asciinema.org/a/MCrvB5JpusVFoTcmsvnWsVAnw
+
+### Asciinema_brain-progression
+https://asciinema.org/a/fb7R0WYsbyn5xV5K6tEAPhuN0
