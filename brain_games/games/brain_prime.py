@@ -1,12 +1,6 @@
 from random import randint
 
-import prompt
-
-
-def welcome_user():
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
-    return name
+from brain_games import common
 
 
 def is_prime(num):
@@ -29,16 +23,17 @@ def prime_game(name):
         is_prime_num = is_prime(num)
         print("Question: " + str(num))
         answer = input('Your answer: ')
-        if answer == 'yes' and is_prime_num or\
-        answer == 'no' and not is_prime_num:
+        if is_prime_num:
+            result = 'yes'
+        else:
+            result = 'no'
+        check = common.check_answer(answer, result)
+        if check:
             print('Correct!')
             points += 1
-        elif answer == 'yes' and not is_prime_num:
-            print("'yes' is wrong answer ;(. Correct answer was 'no'.")
-            print("Let's try again, " + name + "!")
-            break
-        elif answer == 'no' and is_prime_num:
-            print("'no' is wrong answer ;(. Correct answer was 'yes'.")
+        else:
+            print(f"'{answer}' is wrong answer ;(. \
+Correct answer was '{result}'.")
             print("Let's try again, " + name + "!")
             break
     if points == 3:
@@ -47,7 +42,7 @@ def prime_game(name):
 
 def main():
     print("Welcome to the Brain Games!")
-    name = welcome_user()
+    name = common.welcome_user()
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     prime_game(name)
 

@@ -7,6 +7,8 @@ def welcome_user():
     return name
 
 
-def check_ponts(points, name):
-    if points == 3:
-        print("Congratulations, " + name + "!")
+def check_answer(answer, result):
+    if answer == result:
+        return True
+    else:
+        return False

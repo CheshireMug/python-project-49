@@ -1,3 +1,11 @@
+### Инструкция по разворачиванию проекта
+# 1. Установите Python версии 3.10 или выше
+# 2. Установите пакетный менеджер uv
+# 3. Клонируйте созданный репозиторий проекта локально
+# 4. Выполните установку пакета с помощью команды uv sync. uv создаст  виртуальное окружение и установит в него пакет.
+# 5. Запустите команду make build
+# 6. Запустите команду make package-install
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/CheshireMug/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/CheshireMug/python-project-49/actions)
 
@@ -11,6 +19,8 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=CheshireMug_python-project-49&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=CheshireMug_python-project-49)
 
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CheshireMug_python-project-49&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CheshireMug_python-project-49)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=CheshireMug_python-project-49&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=CheshireMug_python-project-49)
 
 ### Asciinema_brain-even
 https://asciinema.org/a/XtK6J4OkTE5gMEfvfM9S8LiUB

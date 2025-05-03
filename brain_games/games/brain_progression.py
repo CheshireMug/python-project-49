@@ -1,12 +1,6 @@
 from random import randint
 
-import prompt
-
-
-def welcome_user():
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
-    return name
+from brain_games import common
 
 
 def gen_arr():
@@ -34,15 +28,15 @@ def progression_game(name):
         arr = gen_arr()
         hidden_arr, hidden_el = hid_arr(arr)
         print("Question: " + f"{' '.join(hidden_arr)}")
-        answer = int(input('Your answer: '))
-        if answer == arr[hidden_el]:
+        answer = input('Your answer: ')
+        result = str(arr[hidden_el])
+        check = common.check_answer(answer, result)
+        if check:
             print('Correct!')
             points += 1
         else:
-            print(
-                    f"'{answer}' is is wrong answer ;(. \
-Correct answer was '{arr[hidden_el]}'."
-                    )
+            print(f"'{answer}' is wrong answer ;(. \
+Correct answer was '{result}'.")
             print("Let's try again, " + name + "!")
             break
     if points == 3:
@@ -51,7 +45,7 @@ Correct answer was '{arr[hidden_el]}'."
 
 def main():
     print("Welcome to the Brain Games!")
-    name = welcome_user()
+    name = common.welcome_user()
     print('What number is missing in the progression?')
     progression_game(name)
 

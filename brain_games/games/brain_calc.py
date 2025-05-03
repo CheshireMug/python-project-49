@@ -1,12 +1,6 @@
 from random import choice, randint
 
-import prompt
-
-
-def welcome_user():
-    name = prompt.string('May I have your name? ')
-    print('Hello, ' + name + '!')
-    return name
+from brain_games import common
 
 
 def check_question(name, points):
@@ -15,17 +9,16 @@ def check_question(name, points):
     num1 = randint(0, 100)
     num2 = randint(0, 100)
     expression = f"{num1} {select_operation} {num2}"
-    result = eval(expression)
+    result = str(eval(expression))
     print('Question: ' + expression)
-    answer = int(input('Your answer: '))
-    if answer == result:
+    answer = input('Your answer: ')
+    check = common.check_answer(answer, result)
+    if check:
         print('Correct!')
         points += 1
     else:
-        print(
-        f"'{answer}' is is wrong answer ;(. \
-Correct answer was '{result}'."
-        )
+        print(f"'{answer}' is wrong answer ;(. \
+Correct answer was '{result}'.")
         print("Let's try again, " + name + "!")
     return points
 
@@ -47,7 +40,7 @@ def calc_game(name):
 
 def main():
     print("Welcome to the Brain Games!")
-    name = welcome_user()
+    name = common.welcome_user()
     print('What is the result of the expression?')
     calc_game(name)
 
