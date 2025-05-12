@@ -16,35 +16,16 @@ def is_prime(num):
     return True
 
 
-def prime_game(name):
-    points = 0
-    for i in range(3):
-        num = randint(0, 100)
-        is_prime_num = is_prime(num)
-        print("Question: " + str(num))
-        answer = input('Your answer: ')
-        if is_prime_num:
-            result = 'yes'
-        else:
-            result = 'no'
-        check = common.check_answer(answer, result)
-        if check:
-            print('Correct!')
-            points += 1
-        else:
-            print(f"'{answer}' is wrong answer ;(. \
-Correct answer was '{result}'.")
-            print("Let's try again, " + name + "!")
-            break
-    if points == 3:
-        print("Congratulations, " + name + "!")
+def generate_prime_question_and_answer():
+    num = randint(0, 100)
+    correct_answer = 'yes' if is_prime(num) else 'no'
+    return str(num), correct_answer
 
 
 def main():
-    print("Welcome to the Brain Games!")
     name = common.welcome_user()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    prime_game(name)
+    rule = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+    common.start_game(name, rule, generate_prime_question_and_answer)
 
 
 if __name__ == "__main__":
