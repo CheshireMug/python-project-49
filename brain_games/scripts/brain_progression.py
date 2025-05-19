@@ -1,8 +1,8 @@
-from brain_games.games import brain_progression
+from brain_games import common, games
 
 
 def main():
-    brain_progression.main()
+    common.start_game(games.brain_progression)
 
 
 if __name__ == "__main__":

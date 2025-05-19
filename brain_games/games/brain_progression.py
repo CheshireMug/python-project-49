@@ -3,7 +3,10 @@ from random import randint
 from brain_games import common
 
 
-def generate_progression_question_and_answer():
+RULE = 'What number is missing in the progression?'
+
+
+def generate_question_and_answer():
     first = randint(0, 100)
     step = randint(1, 100)
     length = 10
@@ -17,13 +20,3 @@ def generate_progression_question_and_answer():
     question = ' '.join(question_list)
 
     return question, correct_answer
-
-
-def main():
-    name = common.welcome_user()
-    rule = 'What number is missing in the progression?'
-    common.start_game(name, rule, generate_progression_question_and_answer)
-
-
-if __name__ == "__main__":
-    main()
