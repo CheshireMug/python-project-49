@@ -8,33 +8,28 @@ def welcome_user():
     return name
 
 
-def check_answer(answer, result):
-    if answer == result:
-        return True
+def check_answer(answer, correct_answer, name):
+    if answer == correct_answer:
+        print("Correct!")
+        return 1
     else:
-        return False
+        print(f"'{answer}' is wrong answer ;(. \
+Correct answer was '{correct_answer}'.")
+        print(f"Let's try again, {name}!")
+        exit()
 
 
-def check_points(points, name):
-    if points == 3:
-        print("Congratulations, " + name + "!")
-
-
-def start_game(game):
-    name = welcome_user()
-    game_rule = game.RULE
-    print(game_rule)
-    points = 0
+def game_loop(name, game):
     for i in range(3):
         question, correct_answer = game.generate_question_and_answer()
         print(f"Question: {question}")
         answer = input('Your answer: ')
-        if check_answer(answer, correct_answer):
-            print("Correct!")
-            points += 1
-        else:
-            print(f"'{answer}' is wrong answer ;(. \
-Correct answer was '{correct_answer}'.")
-            print(f"Let's try again, {name}!")
-            break
-    check_points(points, name)
+        check_answer(answer, correct_answer, name)
+    print("Congratulations, " + name + "!")
+    return
+
+
+def start_game(game):
+    name = welcome_user()
+    print(game.RULE)
+    game_loop(name, game)

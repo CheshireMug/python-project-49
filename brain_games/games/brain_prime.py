@@ -1,8 +1,5 @@
 from random import randint
 
-from brain_games import common
-
-
 RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
@@ -19,7 +16,11 @@ def is_prime(num):
     return True
 
 
+def generate_random_number():
+    return randint(0, 100)
+
+
 def generate_question_and_answer():
-    num = randint(0, 100)
+    num = generate_random_number()
     correct_answer = 'yes' if is_prime(num) else 'no'
     return str(num), correct_answer
